@@ -1,0 +1,59 @@
+body{
+    font-family: "Bebas Neue", sans-serif;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #686D76;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+span{
+    float: right;
+    padding: 2dvw;
+    color: #f1f1f1;
+    font-size: 1dvw;
+}
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+.content h1, h3{
+  font-family: "Roboto Condensed", sans-serif;
+}
+.paragraph{
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
