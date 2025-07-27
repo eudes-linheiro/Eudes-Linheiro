@@ -1,5 +1,6 @@
-body{
-    font-family: "Bebas Neue", sans-serif;
+
+body {
+  font-family: "Funnel Display", sans-serif;
 }
 .sidenav {
   height: 100%;
@@ -38,18 +39,11 @@ span{
     float: right;
     padding: 2dvw;
     color: #f1f1f1;
-    font-size: 1dvw;
+    font-size: 2dvw;
 }
 #main {
   transition: margin-left .5s;
   padding: 20px;
-}
-
-.content h1, h3{
-  font-family: "Roboto Condensed", sans-serif;
-}
-.paragraph{
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
