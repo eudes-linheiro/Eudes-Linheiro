@@ -3,11 +3,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navClose = document.querySelector(".nav-close");
 
-  const openNav = () => nav.classList.add("open");
-  const closeNav = () => nav.classList.remove("open");
+  const openNav = () => nav?.classList.add("open");
+  const closeNav = () => nav?.classList.remove("open");
 
-  menuToggle?.addEventListener("click", openNav);
-  navClose?.addEventListener("click", closeNav);
+  menuToggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    nav?.classList.toggle("open");
+  });
+
+  navClose?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    closeNav();
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideNav = nav?.contains(event.target);
+    const clickedToggle = menuToggle?.contains(event.target);
+
+    if (!clickedInsideNav && !clickedToggle) {
+      closeNav();
+    }
+  });
 
   const modals = document.querySelectorAll(".modal");
   const modalTriggers = document.querySelectorAll("[data-modal-target]");

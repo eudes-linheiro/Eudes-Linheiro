@@ -1,10 +1,8 @@
 :root {
   --bg: #000000;
   --panel: #141616;
-  --panel-alt: #1a1d1f;
   --text: #f1f1f1;
   --muted: #686d76;
-  --accent: #ffffff;
   --shadow: rgba(0, 0, 0, 0.35);
 }
 
@@ -19,14 +17,15 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: "Funnel Display", sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 a {
@@ -49,7 +48,6 @@ button {
   min-height: 80vh;
   display: grid;
   place-content: center;
-  text-align: left;
   padding: 4rem 0 2rem;
 }
 
@@ -200,19 +198,12 @@ button {
 .profile-header {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: center;
   background: var(--panel);
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   margin-bottom: 2rem;
-}
-
-.profile-header img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
+  text-align: center;
 }
 
 .profile-meta h1 {
@@ -312,7 +303,6 @@ button {
   }
 
   .profile-header {
-    flex-direction: column;
     text-align: center;
   }
 
