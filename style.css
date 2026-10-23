@@ -1,9 +1,16 @@
 :root {
-  --bg: #000;
-  --panel: #141616;
-  --text: #f1f1f1;
-  --muted: #686d76;
-  --shadow: rgba(0, 0, 0, 0.35);
+  --bg: #f4efe8;
+  --bg-strong: #e6e0d7;
+  --panel: #ffffff;
+  --panel-soft: #f8f5f1;
+  --text: #171717;
+  --muted: #5d5b59;
+  --muted-soft: #7a7572;
+  --line: rgba(23, 23, 23, 0.12);
+  --shadow: rgba(16, 16, 16, 0.08);
+  --shadow-strong: rgba(16, 16, 16, 0.14);
+  --accent: #1d1d1d;
+  --accent-soft: #6a625d;
 }
 
 * {
@@ -19,8 +26,9 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.8), transparent 32%), var(--bg);
   color: var(--text);
+  line-height: 1.6;
 }
 
 img {
@@ -39,13 +47,13 @@ button {
 }
 
 .page-shell {
-  width: min(1200px, calc(100% - 2rem));
+  width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 1.25rem 0 3rem;
+  padding: 1.4rem 0 3rem;
 }
 
 .hero {
-  min-height: 80vh;
+  min-height: 78vh;
   display: grid;
   place-content: center;
   padding: 4rem 0 2rem;
@@ -53,11 +61,12 @@ button {
 
 .hero h1 {
   margin: 0;
-  max-width: 760px;
+  max-width: 780px;
   color: var(--muted);
-  font-size: clamp(2.5rem, 7vw, 8rem);
-  line-height: 0.95;
+  font-size: clamp(2.8rem, 7vw, 8rem);
+  line-height: 0.9;
   font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .hero-name,
@@ -66,37 +75,45 @@ button {
 }
 
 .hero-name {
-  margin-top: 0.75rem;
+  margin-top: 0.8rem;
   color: var(--text);
   font-size: clamp(1rem, 2vw, 2rem);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .hero-role {
-  margin-top: 0.45rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
   color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .cta-btn {
   display: inline-block;
-  padding: 0.9rem 1.6rem;
+  padding: 0.95rem 1.8rem;
   background: var(--text);
   color: var(--bg);
-  border-radius: 0.4rem;
+  border-radius: 999px;
   font-weight: 700;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 12px 28px rgba(23, 23, 23, 0.12);
 }
 
 .cta-btn:hover {
-  transform: translateY(-1px);
-  opacity: 0.95;
+  transform: translateY(-2px);
+  opacity: 0.98;
+  box-shadow: 0 18px 34px rgba(23, 23, 23, 0.16);
 }
 
 .site-footer {
-  padding: 2rem 0;
+  padding: 2.2rem 0 1rem;
   text-align: center;
 }
 
@@ -105,7 +122,7 @@ button {
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .social-links a,
@@ -115,6 +132,13 @@ button {
   background: transparent;
   border: 0;
   padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.social-links a:hover,
+.footer-links a:hover,
+.footer-links button:hover {
+  opacity: 0.7;
 }
 
 .footer-links {
@@ -122,17 +146,20 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.75rem;
   margin-top: 1rem;
 }
 
 .footer-links span {
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .copyright {
   margin-top: 1.5rem;
   color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 .sidenav {
@@ -141,26 +168,34 @@ button {
   right: 0;
   width: 0;
   height: 100vh;
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
   overflow: hidden;
-  transition: width 0.3s ease;
+  transition: width 0.28s ease, box-shadow 0.28s ease;
   z-index: 30;
-  box-shadow: -8px 0 22px var(--shadow);
+  box-shadow: -12px 0 26px var(--shadow-strong);
+  border-left: 1px solid var(--line);
 }
 
 .sidenav.open {
-  width: 250px;
+  width: 290px;
 }
 
 .sidenav a {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1.1rem 1.5rem;
   color: var(--muted);
-  font-size: 1.5rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
 
 .sidenav a:hover {
   color: var(--text);
+  background: var(--panel-soft);
+  padding-left: 1.8rem;
 }
 
 .nav-close,
@@ -169,18 +204,32 @@ button {
   right: 1rem;
   z-index: 40;
   border: 0;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.8);
   color: var(--text);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(23, 23, 23, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .nav-close {
-  top: 0.5rem;
-  font-size: 2.5rem;
+  top: 0.7rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 2.2rem;
+  line-height: 1;
 }
 
 .menu-toggle {
   top: 1rem;
-  font-size: 1.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 1.4rem;
+}
+
+.nav-close:hover,
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .about-page {
@@ -190,22 +239,29 @@ button {
 .profile-header {
   display: flex;
   justify-content: center;
-  background: var(--panel);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 1.6rem 1.2rem;
   margin-bottom: 2rem;
   text-align: center;
+  box-shadow: 0 10px 26px var(--shadow);
 }
 
 .profile-meta h1 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 4rem);
+  letter-spacing: -0.04em;
 }
 
 .profile-meta p {
   margin: 0.35rem 0 0;
   color: var(--muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
 }
 
 .content-grid {
@@ -215,19 +271,24 @@ button {
 }
 
 .card {
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--line);
   border-radius: 1rem;
-  padding: 1.25rem;
+  padding: 1.4rem 1.25rem;
+  box-shadow: 0 12px 26px rgba(16, 16, 16, 0.04);
 }
 
 .card h2 {
   margin-top: 0;
+  margin-bottom: 0.9rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
 }
 
 .card p,
 .card li {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .card ul {
@@ -236,7 +297,7 @@ button {
 }
 
 .card li + li {
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
 }
 
 .modal {
@@ -245,7 +306,7 @@ button {
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 15, 15, 0.52);
   padding: 1rem;
   z-index: 50;
 }
@@ -259,10 +320,11 @@ button {
   width: min(760px, 100%);
   max-height: 80vh;
   overflow-y: auto;
-  background: #fefefe;
+  background: #fffdfb;
   color: #111;
-  border-radius: 0.75rem;
+  border-radius: 0.9rem;
   padding: 1.5rem;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
 }
 
 .modal-content h2,
@@ -287,6 +349,14 @@ button {
   }
 
   .hero {
-    min-height: 65vh;
+    min-height: 60vh;
+  }
+
+  .page-shell {
+    width: min(100%, calc(100% - 1rem));
+  }
+
+  .sidenav.open {
+    width: 240px;
   }
 }
