@@ -5,6 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setNavOpen = (open) => {
     nav.classList.toggle("open", open);
+    document.body.classList.toggle("nav-open", open);
+
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation" : "Open navigation"
+      );
+    }
+
+    if (navClose) {
+      navClose.setAttribute("aria-expanded", String(open));
+    }
   };
 
   menuToggle?.addEventListener("click", (event) => {
@@ -18,7 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("click", (event) => {
-    if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+    const clickInsideNav = nav.contains(event.target);
+    const clickOnMenu = menuToggle && menuToggle.contains(event.target);
+    const clickOnClose = navClose && navClose.contains(event.target);
+
+    if (!clickInsideNav && !clickOnMenu && !clickOnClose) {
       setNavOpen(false);
     }
   });
