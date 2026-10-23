@@ -3,58 +3,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navClose = document.querySelector(".nav-close");
 
-  const openNav = () => nav?.classList.add("open");
-  const closeNav = () => nav?.classList.remove("open");
+  const setNavOpen = (open) => {
+    nav.classList.toggle("open", open);
+  };
 
   menuToggle?.addEventListener("click", (event) => {
     event.stopPropagation();
-    nav?.classList.toggle("open");
+    setNavOpen(!nav.classList.contains("open"));
   });
 
   navClose?.addEventListener("click", (event) => {
     event.stopPropagation();
-    closeNav();
+    setNavOpen(false);
   });
 
   document.addEventListener("click", (event) => {
-    const clickedInsideNav = nav?.contains(event.target);
-    const clickedToggle = menuToggle?.contains(event.target);
-
-    if (!clickedInsideNav && !clickedToggle) {
-      closeNav();
+    if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+      setNavOpen(false);
     }
   });
 
   const modals = document.querySelectorAll(".modal");
   const modalTriggers = document.querySelectorAll("[data-modal-target]");
-  const modalCloses = document.querySelectorAll("[data-close]");
+  const modalClosers = document.querySelectorAll("[data-close]");
 
   const openModal = (id) => {
     const modal = document.getElementById(id);
     if (!modal) return;
-
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
   };
 
   const closeModal = (modal) => {
     if (!modal) return;
-
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
   };
 
   modalTriggers.forEach((button) => {
     button.addEventListener("click", () => {
-      const target = button.getAttribute("data-modal-target");
-      openModal(target);
+      openModal(button.getAttribute("data-modal-target"));
     });
   });
 
-  modalCloses.forEach((button) => {
+  modalClosers.forEach((button) => {
     button.addEventListener("click", () => {
-      const modal = button.closest(".modal");
-      closeModal(modal);
+      closeModal(button.closest(".modal"));
     });
   });
 
@@ -69,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       modals.forEach((modal) => closeModal(modal));
-      closeNav();
+      setNavOpen(false);
     }
   });
 });

@@ -3,76 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Eudes Linheiro portfolio homepage showcasing creative technology work."
-    />
+    <meta name="description" content="Eudes Linheiro portfolio homepage" />
     <title>Eudes Linheiro - Home</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-
     <link rel="stylesheet" href="style.css" />
     <script defer src="index.js"></script>
   </head>
-
   <body>
     <nav id="mySidenav" class="sidenav" aria-label="Main navigation">
-      <button class="nav-close" type="button" aria-label="Close navigation">
-        &times;
-      </button>
+      <button class="nav-close" type="button" aria-label="Close navigation">&times;</button>
       <a href="index.html">HOME</a>
       <a href="about.html">ABOUT</a>
       <a href="#">PROJECTS</a>
       <a href="#">uCONNECT</a>
     </nav>
 
-    <button class="menu-toggle" type="button" aria-label="Open navigation">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+    <button class="menu-toggle" type="button" aria-label="Open navigation">☰</button>
 
     <main class="page-shell">
       <section class="hero">
         <h1>WELCOME TO MY PORTFOLIO</h1>
         <p class="hero-name">EUDES LINHEIRO</p>
         <p class="hero-role">CREATIVE TECHNOLOGIST</p>
-        <a href="about.html" class="cta-btn">CONTINUE</a>
+        <a class="cta-btn" href="about.html">CONTINUE</a>
       </section>
 
       <footer class="site-footer">
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/eudeslinheiro"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://github.com/eudes-linheiro"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://youtube.com/@dreamerxesml7"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="YouTube"
-          >
-            <i class="fa-brands fa-youtube"></i>
-          </a>
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://www.linkedin.com/in/eudeslinheiro" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/eudes-linheiro" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://youtube.com/@dreamerxesml7" target="_blank" rel="noreferrer">YouTube</a>
         </div>
 
         <div class="footer-links">
@@ -80,9 +39,7 @@
           <span>|</span>
           <a href="#">Services</a>
           <span>|</span>
-          <button type="button" data-modal-target="policies">
-            Privacy Policies
-          </button>
+          <button type="button" data-modal-target="policies">Privacy Policies</button>
         </div>
 
         <p class="copyright">&copy; EUDES LINHEIRO 2026.</p>
@@ -91,52 +48,21 @@
 
     <div id="myModal" class="modal" aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="terms-title">
-        <button type="button" class="modal-close" data-close aria-label="Close Terms of Use">
-          &times;
-        </button>
+        <button type="button" class="modal-close" data-close aria-label="Close dialog">&times;</button>
         <h2 id="terms-title">Website Terms of Use</h2>
         <p>Legal Information &amp; Notices</p>
         <h3>Ownership of Site; Agreement to Terms of Use</h3>
-        <p>
-          These Terms and Conditions of Use apply to this website and all associated
-          sites operated by Eudes Linheiro.
-        </p>
-        <p>
-          By accessing the site, you agree to be bound by these terms and accept
-          the responsibilities described here.
-        </p>
+        <p>These Terms and Conditions of Use apply to this website.</p>
         <h3>Content</h3>
-        <p>
-          All content on this site is provided for informational purposes and may
-          be used only in accordance with these terms.
-        </p>
-        <h3>Your Use of the Site</h3>
-        <p>
-          You agree not to misuse the website, overload the infrastructure, or
-          interfere with site functionality.
-        </p>
+        <p>All content is provided for informational purposes.</p>
       </div>
     </div>
 
     <div id="policies" class="modal" aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="policy-title">
-        <button type="button" class="modal-close" data-close aria-label="Close Privacy Policy">
-          &times;
-        </button>
+        <button type="button" class="modal-close" data-close aria-label="Close dialog">&times;</button>
         <h2 id="policy-title">Eudes's Privacy &amp; Policies</h2>
-        <p>
-          This Privacy Policy applies to the use of this website and is part of the
-          overall terms for using the site.
-        </p>
-        <p>
-          We use personal information only where required to support site
-          functionality and communicate with users.
-        </p>
-        <h3>Disclaimer</h3>
-        <p>
-          The website is provided as-is and may be updated, suspended, or changed
-          without notice.
-        </p>
+        <p>Privacy Policy applies to use of this site and is incorporated into the Terms of Use.</p>
       </div>
     </div>
   </body>
